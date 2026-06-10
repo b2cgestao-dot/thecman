@@ -39,7 +39,7 @@ export function TeamSection() {
                   <span className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-xl bg-navy-900 text-white transition-colors group-hover:bg-brand-blue">
                     <FontAwesomeIcon icon={card.icon} className="h-7 w-7" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-5 text-base font-bold text-navy-900">
+                  <h3 className="mt-5 text-base font-bold leading-[1.25] tracking-[-0.02em] text-navy-900">
                     {card.title}
                   </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-600">
@@ -54,7 +54,7 @@ export function TeamSection() {
         <Reveal delay={0.25}>
           <div className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-navy-100 bg-surface-muted px-8 py-8 text-center sm:flex-row sm:text-left">
             <div className="flex-1">
-              <p className="text-base font-bold text-navy-900">
+              <p className="text-base font-bold leading-[1.25] tracking-[-0.02em] text-navy-900">
                 Precisa orientar sua equipe de manutenção?
               </p>
               <p className="mt-1 text-sm text-navy-600">

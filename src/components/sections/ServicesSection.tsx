@@ -77,21 +77,21 @@ export function ServicesSection() {
       <div className="relative flex flex-1 flex-col justify-start pt-20 pb-16 sm:justify-center sm:py-0">
         <Container>
           <Reveal>
-            <div className="w-full sm:max-w-[540px] lg:max-w-[520px]">
+            <div className="w-full text-center sm:max-w-[540px] sm:text-left lg:max-w-[520px]">
 
               {/* Tag */}
-              <span className="inline-block rounded-full border border-brand-blue/40 bg-brand-blue/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-blue-light">
-                Serviços técnicos
+              <span className="mb-1 inline-block font-cascadia text-[11px] font-bold uppercase tracking-[0.14em] text-brand-blue-light">
+                — Serviços técnicos
               </span>
 
               {/* Título desktop */}
-              <h2 className="mt-5 hidden text-balance text-4xl font-extrabold leading-tight tracking-tight text-white sm:block lg:text-[2.75rem] lg:leading-[1.08]">
+              <h2 className="mt-5 hidden text-balance font-cascadia text-[2.25rem] font-medium leading-[1.05] tracking-[-0.04em] text-white sm:block lg:text-[2.75rem]">
                 Manutenção eletromecânica para manter sua{' '}
                 <span className="text-brand-blue-light">indústria em operação</span>
               </h2>
 
               {/* Título mobile */}
-              <h2 className="mt-5 text-[1.75rem] font-extrabold leading-tight tracking-tight text-white sm:hidden">
+              <h2 className="mt-5 font-cascadia text-[1.75rem] font-medium leading-[1.05] tracking-[-0.04em] text-white sm:hidden">
                 Manutenção eletromecânica para sua{' '}
                 <span className="text-brand-blue-light">operação não parar</span>
               </h2>
@@ -129,7 +129,7 @@ export function ServicesSection() {
               </ul>
 
               {/* Lista compacta mobile */}
-              <p className="mt-5 flex flex-wrap gap-x-0 text-sm font-medium leading-relaxed text-white/75 sm:hidden" aria-label="Serviços oferecidos">
+              <p className="mt-5 flex flex-wrap justify-center gap-x-0 text-sm font-medium leading-relaxed text-white/75 sm:hidden" aria-label="Serviços oferecidos">
                 {mobileItems.map((item, i) => (
                   <span key={item}>
                     {item}
@@ -141,7 +141,7 @@ export function ServicesSection() {
               </p>
 
               {/* CTA */}
-              <div className="mt-8 sm:mt-9">
+              <div className="mt-8 flex justify-center sm:mt-9 sm:justify-start">
                 <Button
                   as="a"
                   href={link}

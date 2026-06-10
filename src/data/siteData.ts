@@ -224,11 +224,12 @@ export const store = {
   description:
     'Conte com uma revenda autorizada WEG para consultar peças, equipamentos e soluções com suporte técnico e disponibilidade para sua empresa.',
   highlights: [
-    { icon: faStore,        text: 'Loja própria' },
+    { icon: faCertificate,  text: 'Produtos 100% Originais' },
     { icon: faBoxesStacked, text: 'Estoque a pronta entrega' },
     { icon: faIndustry,     text: 'Atendimento para indústrias, oficinas e empresas de manutenção' },
     { icon: faHeadset,      text: 'Suporte técnico na escolha da solução' },
-    { icon: faBoxesStacked, text: 'Envio e atendimento para diferentes regiões, conforme disponibilidade' },
+    { icon: faHandshake,    text: 'Envio e atendimento para diferentes regiões, conforme disponibilidade' },
+    { icon: faUsers,        text: '+874 clientes ativos' },
   ] as { icon: IconDefinition; text: string }[],
   ctaLabel: 'Consultar peças WEG no WhatsApp',
   image: imgPecasOriginais,

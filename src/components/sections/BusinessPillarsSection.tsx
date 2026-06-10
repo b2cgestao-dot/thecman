@@ -68,14 +68,14 @@ export function BusinessPillarsSection() {
                     />
                   </motion.span>
 
-                  <h3 className="mt-5 text-2xl font-bold text-white">
+                  <h3 className="mt-5 text-center text-[1.0625rem] font-bold leading-[1.2] tracking-[-0.02em] text-white sm:text-left">
                     {pillar.title}
                   </h3>
                 </div>
 
                 {/* Corpo */}
                 <div className="flex flex-1 flex-col px-8 py-7">
-                  <p className="flex-1 text-base leading-relaxed text-navy-600">
+                  <p className="flex-1 text-center text-[13.5px] leading-[1.55] text-navy-600 sm:text-left">
                     {pillar.description}
                   </p>
                   <div className="mt-7">

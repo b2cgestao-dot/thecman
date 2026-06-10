@@ -47,7 +47,7 @@ export function FinalCTASection() {
               ))}
             </div>
 
-            <h2 className="text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
+            <h2 className="text-balance text-3xl font-bold leading-[1.05] tracking-[-0.04em] sm:text-[2.5rem] lg:text-[2.75rem]">
               Sua indústria precisa de manutenção, peças ou{' '}
               <span className="text-brand-blue-light">suporte WEG</span>?
             </h2>

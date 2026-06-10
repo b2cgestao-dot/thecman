@@ -53,9 +53,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-balance text-4xl font-extrabold leading-[1.0] tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem]"
+              className="text-balance text-4xl font-bold leading-[0.95] tracking-[-0.045em] sm:text-5xl lg:text-[3.25rem]"
             >
-              Assistência Técnica e Revenda Autorizada{' '}
+              Assistência Técnica e<br />
+              Revenda Autorizada<br />
               <span className="text-brand-blue-light">WEG</span> em Salvador
             </motion.h1>
 

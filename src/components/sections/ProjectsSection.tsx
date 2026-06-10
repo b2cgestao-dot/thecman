@@ -57,10 +57,10 @@ export function ProjectsSection() {
                   >
                     {project.category}
                   </span>
-                  <h3 className="mt-2.5 text-sm font-bold text-navy-900">
+                  <h3 className="mt-2.5 mb-2 text-base font-bold leading-[1.25] tracking-[-0.02em] text-navy-900">
                     {project.title}
                   </h3>
-                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-navy-500">
+                  <p className="flex-1 text-sm leading-[1.6] text-navy-500">
                     {project.description}
                   </p>
                 </div>
@@ -71,7 +71,7 @@ export function ProjectsSection() {
 
         <Reveal delay={0.2}>
           <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-            <p className="max-w-xl text-sm text-navy-500">
+            <p className="max-w-xl text-center text-sm text-navy-500 sm:text-left">
               Exemplos institucionais de escopo de atuação. Para detalhes sobre uma
               necessidade específica, fale com nossa equipe técnica.
             </p>

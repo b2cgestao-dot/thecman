@@ -57,11 +57,11 @@
   margin-bottom: 16px;
 }
 .weg-title {
-  font-family: var(--weg-font-display);
-  font-weight: 700;
+  font-family: 'Cascadia Code', 'Cascadia Mono', ui-monospace, Consolas, monospace;
+  font-weight: 500;
   font-size: 40px;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   color: var(--weg-ink);
   margin: 0 0 16px;
   max-width: 620px;
@@ -142,11 +142,12 @@
 }
 .weg-item__title {
   font-family: var(--weg-font-display);
-  font-weight: 600;
-  font-size: 16.5px;
+  font-weight: 700;
+  font-size: 16px;
   color: var(--weg-ink);
   margin: 0 0 8px;
   line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 .weg-item__desc {
   margin: 0;
@@ -213,6 +214,11 @@
   .weg-item__top {
     justify-content: center;
     flex-direction: row-reverse;
+  }
+  .weg-highlight {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 @media (max-width: 560px) {

@@ -67,6 +67,13 @@ export default {
           'Segoe UI',
           'sans-serif',
         ],
+        cascadia: [
+          '"Cascadia Code"',
+          '"Cascadia Mono"',
+          'ui-monospace',
+          'Consolas',
+          'monospace',
+        ],
       },
       borderRadius: {
         card: '12px',
