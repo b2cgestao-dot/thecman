@@ -46,7 +46,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Marca + descrição */}
           <div className="lg:col-span-5">
-            <Logo dark />
+            <Logo />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-300">
               {company.tagline}
             </p>
