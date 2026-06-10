@@ -7,11 +7,9 @@ import { BusinessPillarsSection } from '@/components/sections/BusinessPillarsSec
 import { WegAuthoritySection } from '@/components/sections/WegAuthoritySection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { StoreSection } from '@/components/sections/StoreSection'
-import { AudienceSection } from '@/components/sections/AudienceSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
 import { TrustStrip } from '@/components/sections/TrustStrip'
 import { TeamSection } from '@/components/sections/TeamSection'
-import { WhyChooseSection } from '@/components/sections/WhyChooseSection'
 import { FinalCTASection } from '@/components/sections/FinalCTASection'
 
 function App() {
@@ -26,10 +24,8 @@ function App() {
         <WegAuthoritySection />
         <ServicesSection />
         <StoreSection />
-        <AudienceSection />
         <ProjectsSection />
         <TeamSection />
-        <WhyChooseSection />
         <FinalCTASection />
       </main>
       <Footer />

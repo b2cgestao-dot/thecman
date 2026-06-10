@@ -11,62 +11,79 @@ const items = [
 export function TrustStrip() {
   return (
     <>
+      {/*
+        @property registers --trust-angle as an animatable CSS custom property.
+        Without this, the browser cannot interpolate angle values in keyframes.
+        The conic-gradient(from var(--trust-angle)) then creates a true
+        animated-gradient border without any overflow / spinner artifacts.
+      */}
       <style>{`
-        @keyframes trust-light-sweep {
-          to { transform: translate(-50%, -50%) rotate(360deg); }
+        @property --trust-angle {
+          syntax: '<angle>';
+          initial-value: 0deg;
+          inherits: false;
         }
+
+        @keyframes trust-border-spin {
+          to { --trust-angle: 360deg; }
+        }
+
+        .trust-badge {
+          /* 1.5 px transparent border — the gradient fills only this strip */
+          border: 1.5px solid transparent;
+
+          /*
+            Two-layer background trick:
+            ① white fills the PADDING-BOX (inside the border) → hides gradient there
+            ② conic-gradient fills the BORDER-BOX → visible only in the 1.5 px border gap
+            Result: an animated colored border that follows the rounded corners perfectly.
+          */
+          background:
+            linear-gradient(#fff, #fff) padding-box,
+            conic-gradient(
+              from var(--trust-angle),
+              #e2e8f0  0%,
+              #e2e8f0  35%,
+              rgba(59,130,246,0.35)  44%,
+              rgba(147,197,253,0.9)  50%,
+              #ffffff               53%,
+              rgba(147,197,253,0.9)  56%,
+              rgba(59,130,246,0.35)  65%,
+              #e2e8f0  74%,
+              #e2e8f0 100%
+            ) border-box;
+
+          animation: trust-border-spin 5s linear infinite;
+        }
+
         @media (prefers-reduced-motion: reduce) {
-          @keyframes trust-light-sweep { to { transform: translate(-50%, -50%) rotate(0deg); } }
+          .trust-badge {
+            animation: none;
+            background: linear-gradient(#fff, #fff) padding-box,
+                        linear-gradient(135deg, rgba(147,197,253,0.5), #e2e8f0, rgba(147,197,253,0.5)) border-box;
+          }
         }
       `}</style>
 
       <div className="relative z-20 -mt-7 sm:-mt-9">
         <Container>
-          {/*
-            Outer div: carries the shadow — NOT overflow-hidden so the
-            shadow is not clipped and hugs the badge shape at the corners.
-            Negative spread (-8px) keeps it tight, no horizontal bleed line.
-          */}
-          <div className="mx-auto max-w-3xl rounded-2xl shadow-[0_12px_28px_-8px_rgba(13,27,46,0.26)]">
-
+          <div className="mx-auto max-w-3xl">
             {/*
-              Inner div: overflow-hidden clips the spinning gradient so the
-              animated border is contained within the rounded corners.
+              overflow-hidden clips the inner items to the rounded rect.
+              box-shadow is NOT clipped by the element's own overflow-hidden —
+              it renders in the shadow layer outside the box, creating a clean
+              bottom shadow that hugs the badge shape (negative spread = tight corners).
             */}
-            <div className="relative overflow-hidden rounded-2xl p-[2px]">
-
-              {/* Spinning conic gradient — the "light passing around" effect */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute"
-                style={{
-                  top: '50%',
-                  left: '50%',
-                  width: '900px',
-                  height: '900px',
-                  transform: 'translate(-50%, -50%)',
-                  background:
-                    'conic-gradient(from 0deg at 50% 50%, ' +
-                    'transparent 0%, ' +
-                    'transparent 50%, ' +
-                    'rgba(59,130,246,0.25) 60%, ' +
-                    'rgba(147,197,253,0.85) 68%, ' +
-                    'rgba(255,255,255,0.95) 72%, ' +
-                    'rgba(147,197,253,0.85) 76%, ' +
-                    'rgba(59,130,246,0.25) 84%, ' +
-                    'transparent 92%, ' +
-                    'transparent 100%)',
-                  animation: 'trust-light-sweep 5s linear infinite',
-                }}
-              />
-
-              {/* Badge — sits on top of the gradient, revealing the 2px border */}
-              <div className="relative grid grid-cols-3 overflow-hidden rounded-[14px] bg-white">
+            <div
+              className="trust-badge overflow-hidden rounded-2xl"
+              style={{ boxShadow: '0 10px 24px -8px rgba(13,27,46,0.22)' }}
+            >
+              <div className="grid grid-cols-3">
                 {items.map((item, i) => (
                   <div
                     key={item.label}
                     className={[
-                      'flex flex-col items-center justify-center gap-2 px-4 py-4',
+                      'flex flex-col items-center justify-center gap-2 bg-white px-4 py-4',
                       'sm:flex-row sm:gap-3 sm:px-8 sm:py-5',
                       i < items.length - 1 ? 'border-r border-navy-100' : '',
                     ].join(' ')}
@@ -84,7 +101,6 @@ export function TrustStrip() {
                   </div>
                 ))}
               </div>
-
             </div>
           </div>
         </Container>
