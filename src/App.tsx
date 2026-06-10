@@ -9,7 +9,7 @@ import { ServicesSection } from '@/components/sections/ServicesSection'
 import { StoreSection } from '@/components/sections/StoreSection'
 import { AudienceSection } from '@/components/sections/AudienceSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
-import { MetricsSection } from '@/components/sections/MetricsSection'
+import { TrustStrip } from '@/components/sections/TrustStrip'
 import { TeamSection } from '@/components/sections/TeamSection'
 import { WhyChooseSection } from '@/components/sections/WhyChooseSection'
 import { FinalCTASection } from '@/components/sections/FinalCTASection'
@@ -21,13 +21,13 @@ function App() {
       <Header />
       <main>
         <HeroSection />
+        <TrustStrip />
         <BusinessPillarsSection />
         <WegAuthoritySection />
         <ServicesSection />
         <StoreSection />
         <AudienceSection />
         <ProjectsSection />
-        <MetricsSection />
         <TeamSection />
         <WhyChooseSection />
         <FinalCTASection />
