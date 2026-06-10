@@ -1,11 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
+import { faCommentDots, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { Container } from '@/components/ui/Container'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
-import { services, company, whatsappMessages } from '@/data/siteData'
+import { company, whatsappMessages } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
+
+const desktopList = [
+  'Motores elétricos CA, CC e especiais',
+  'Motoredutores e redutores industriais',
+  'Alternadores e sistemas eletromecânicos',
+  'Manutenção preventiva, corretiva e preditiva',
+  'Quadros e suporte eletromecânico',
+]
+
+const mobileItems = [
+  'Motores elétricos',
+  'Motoredutores',
+  'Alternadores',
+  'Preventiva',
+  'Corretiva',
+  'Preditiva',
+]
 
 export function ServicesSection() {
   const link = buildWhatsappLink(company.whatsapp, whatsappMessages.technicalService)
@@ -13,97 +29,136 @@ export function ServicesSection() {
   return (
     <section
       id="servicos"
-      className="section-padding relative overflow-hidden bg-navy-900 text-white"
+      className="relative flex min-h-[820px] flex-col overflow-hidden text-white sm:min-h-[760px] lg:min-h-[840px]"
     >
-      <div className="absolute inset-0 bg-tech-grid opacity-40" aria-hidden="true" />
+      {/* ── Background: mobile ── */}
+      <img
+        src="/Servi%C3%A7os-Mobile.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover sm:hidden"
+        style={{ objectPosition: 'center top' }}
+        loading="eager"
+        decoding="async"
+      />
+
+      {/* ── Background: desktop ── */}
+      <img
+        src="/Servi%C3%A7os-Desktop.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover sm:block"
+        style={{ objectPosition: 'center right' }}
+        loading="eager"
+        decoding="async"
+      />
+
+      {/* ── Overlay mobile: escuro no topo, desvanece para baixo ── */}
       <div
-        className="absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-weg/15 blur-3xl"
+        className="absolute inset-0 sm:hidden"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(11,27,51,0.96) 0%, rgba(11,27,51,0.90) 36%, rgba(11,27,51,0.55) 62%, rgba(11,27,51,0.12) 100%)',
+        }}
         aria-hidden="true"
       />
 
-      <Container className="relative">
-        <SectionHeading
-          eyebrow="Serviços técnicos"
-          title="Serviços técnicos para a sua indústria"
-          highlight="sua indústria"
-          description="Atuação eletromecânica para corrigir falhas, reduzir paradas e manter seus equipamentos em operação com confiabilidade."
-          dark
-        />
+      {/* ── Overlay desktop: escuro à esquerda, desvanece para a direita ── */}
+      <div
+        className="absolute inset-0 hidden sm:block"
+        style={{
+          background:
+            'linear-gradient(to right, rgba(11,27,51,0.97) 0%, rgba(11,27,51,0.93) 26%, rgba(11,27,51,0.72) 46%, rgba(11,27,51,0.22) 66%, transparent 84%)',
+        }}
+        aria-hidden="true"
+      />
 
-        {/* Editorial numbered rows — 2 columns on desktop */}
-        <div className="mt-12 grid lg:grid-cols-2">
+      {/* ── Conteúdo ── */}
+      <div className="relative flex flex-1 flex-col justify-start pt-20 pb-16 sm:justify-center sm:py-0">
+        <Container>
+          <Reveal>
+            <div className="w-full sm:max-w-[540px] lg:max-w-[520px]">
 
-          {/* Left column — services 1–3 */}
-          <div className="divide-y divide-white/[0.08] lg:border-r lg:border-white/[0.08] lg:pr-10">
-            {services.slice(0, 3).map((service, i) => (
-              <Reveal key={service.title} delay={i * 0.07}>
-                <div className="group flex items-center gap-5 border-l-2 border-l-transparent py-7 pl-4 transition-all duration-200 hover:border-l-weg-light/70 hover:bg-white/[0.03] sm:gap-7 sm:pl-5">
-                  <span
-                    className="w-9 shrink-0 font-mono text-3xl font-black leading-none text-white/[0.07] transition-colors duration-200 group-hover:text-weg-light/25 sm:w-12 sm:text-4xl lg:text-5xl"
-                    aria-hidden="true"
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-weg/20 text-weg-light transition-colors duration-200 group-hover:bg-weg/30">
-                    <FontAwesomeIcon icon={service.icon} className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-base font-bold leading-snug text-white sm:text-lg">
-                      {service.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-navy-100">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+              {/* Tag */}
+              <span className="inline-block rounded-full border border-brand-blue/40 bg-brand-blue/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-blue-light">
+                Serviços técnicos
+              </span>
 
-          {/* Right column — services 4–6 */}
-          <div className="divide-y divide-white/[0.08] border-t border-white/[0.08] lg:border-t-0 lg:pl-10">
-            {services.slice(3).map((service, i) => (
-              <Reveal key={service.title} delay={(i + 3) * 0.07}>
-                <div className="group flex items-center gap-5 border-l-2 border-l-transparent py-7 pl-4 transition-all duration-200 hover:border-l-weg-light/70 hover:bg-white/[0.03] sm:gap-7 sm:pl-5">
-                  <span
-                    className="w-9 shrink-0 font-mono text-3xl font-black leading-none text-white/[0.07] transition-colors duration-200 group-hover:text-weg-light/25 sm:w-12 sm:text-4xl lg:text-5xl"
-                    aria-hidden="true"
-                  >
-                    {String(i + 4).padStart(2, '0')}
-                  </span>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-weg/20 text-weg-light transition-colors duration-200 group-hover:bg-weg/30">
-                    <FontAwesomeIcon icon={service.icon} className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-base font-bold leading-snug text-white sm:text-lg">
-                      {service.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-navy-100">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+              {/* Título desktop */}
+              <h2 className="mt-5 hidden text-balance text-4xl font-extrabold leading-tight tracking-tight text-white sm:block lg:text-[2.75rem] lg:leading-[1.08]">
+                Manutenção eletromecânica para manter sua{' '}
+                <span className="text-brand-blue-light">indústria em operação</span>
+              </h2>
 
-        <Reveal delay={0.5}>
-          <div className="mt-12 flex justify-center">
-            <Button
-              as="a"
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              size="lg"
-            >
-              <FontAwesomeIcon icon={faCommentDots} className="h-5 w-5" aria-hidden="true" />
-              Solicitar serviço técnico
-            </Button>
-          </div>
-        </Reveal>
-      </Container>
+              {/* Título mobile */}
+              <h2 className="mt-5 text-[1.75rem] font-extrabold leading-tight tracking-tight text-white sm:hidden">
+                Manutenção eletromecânica para sua{' '}
+                <span className="text-brand-blue-light">operação não parar</span>
+              </h2>
+
+              {/* Parágrafo desktop */}
+              <p className="mt-5 hidden text-base leading-relaxed text-white/80 sm:block lg:text-[1.0625rem]">
+                Quando um equipamento para, sua operação perde tempo, produtividade e
+                segurança. A Thecman atua no diagnóstico, manutenção e suporte técnico de
+                equipamentos industriais, oferecendo soluções para corrigir falhas, reduzir
+                paradas e aumentar a confiabilidade da sua operação.
+              </p>
+
+              {/* Parágrafo mobile */}
+              <p className="mt-4 text-[0.9375rem] leading-relaxed text-white/80 sm:hidden">
+                Diagnóstico, manutenção e suporte técnico para reduzir falhas, evitar paradas
+                e aumentar a confiabilidade dos equipamentos industriais.
+              </p>
+
+              {/* Lista desktop */}
+              <ul
+                className="mt-7 hidden space-y-2.5 sm:block"
+                aria-label="Serviços oferecidos"
+              >
+                {desktopList.map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span
+                      className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-brand-blue/25 text-brand-blue-light"
+                      aria-hidden="true"
+                    >
+                      <FontAwesomeIcon icon={faCheck} className="h-2.5 w-2.5" />
+                    </span>
+                    <span className="text-[0.9375rem] font-medium text-white/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Lista compacta mobile */}
+              <p className="mt-5 flex flex-wrap gap-x-0 text-sm font-medium leading-relaxed text-white/75 sm:hidden" aria-label="Serviços oferecidos">
+                {mobileItems.map((item, i) => (
+                  <span key={item}>
+                    {item}
+                    {i < mobileItems.length - 1 && (
+                      <span className="mx-2 text-brand-blue-light/50" aria-hidden="true">•</span>
+                    )}
+                  </span>
+                ))}
+              </p>
+
+              {/* CTA */}
+              <div className="mt-8 sm:mt-9">
+                <Button
+                  as="a"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                  size="lg"
+                >
+                  <FontAwesomeIcon icon={faCommentDots} className="h-5 w-5" aria-hidden="true" />
+                  Solicitar atendimento técnico
+                </Button>
+              </div>
+
+            </div>
+          </Reveal>
+        </Container>
+      </div>
     </section>
   )
 }
