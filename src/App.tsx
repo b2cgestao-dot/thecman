@@ -1,0 +1,41 @@
+import { Seo } from '@/components/Seo'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { FloatingWhatsapp } from '@/components/layout/FloatingWhatsapp'
+import { HeroSection } from '@/components/sections/HeroSection'
+import { BusinessPillarsSection } from '@/components/sections/BusinessPillarsSection'
+import { WegAuthoritySection } from '@/components/sections/WegAuthoritySection'
+import { ServicesSection } from '@/components/sections/ServicesSection'
+import { StoreSection } from '@/components/sections/StoreSection'
+import { AudienceSection } from '@/components/sections/AudienceSection'
+import { ProjectsSection } from '@/components/sections/ProjectsSection'
+import { MetricsSection } from '@/components/sections/MetricsSection'
+import { TeamSection } from '@/components/sections/TeamSection'
+import { WhyChooseSection } from '@/components/sections/WhyChooseSection'
+import { FinalCTASection } from '@/components/sections/FinalCTASection'
+
+function App() {
+  return (
+    <>
+      <Seo />
+      <Header />
+      <main>
+        <HeroSection />
+        <BusinessPillarsSection />
+        <WegAuthoritySection />
+        <ServicesSection />
+        <StoreSection />
+        <AudienceSection />
+        <ProjectsSection />
+        <MetricsSection />
+        <TeamSection />
+        <WhyChooseSection />
+        <FinalCTASection />
+      </main>
+      <Footer />
+      <FloatingWhatsapp />
+    </>
+  )
+}
+
+export default App

@@ -1,0 +1,222 @@
+/* =========================================================
+   Seção "Autoridade Técnica" — Thecman / Autorizada WEG
+   Variação 02 (faixa editorial). Estilos escopados em .weg-authority.
+   ========================================================= */
+.weg-authority {
+  --weg-font-display: 'Inter', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --weg-font-sans:    'Inter', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --weg-font-mono:    'Cascadia Code', 'Consolas', ui-monospace, monospace;
+
+  /* ---- paleta ---- */
+  --weg-blue:             #0b4db3;
+  --weg-blue-bright:      #2e6be6;
+  --weg-ink:              #0b1b33;
+  --weg-text:             #566177;
+  --weg-text-soft:        #6b7790;
+  --weg-num:              #b9c3d6;
+  --weg-line:             #edf0f6;
+  --weg-border:           #e4e9f2;
+  --weg-blue-soft:        #eaf1fd;
+  --weg-blue-soft-border: #d4e2fb;
+  --weg-hover:            #f4f8fe;
+
+  font-family: var(--weg-font-sans);
+  color: var(--weg-ink);
+  box-sizing: border-box;
+}
+.weg-authority *,
+.weg-authority *::before,
+.weg-authority *::after {
+  box-sizing: border-box;
+}
+
+/* Cartão container — sem borda/sombra, padding só horizontal */
+.weg-card {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+/* ---------- Cabeçalho ---------- */
+.weg-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding-bottom: 42px;
+  border-bottom: 1px solid var(--weg-line);
+}
+.weg-eyebrow {
+  display: block;
+  font-family: var(--weg-font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--weg-blue);
+  margin-bottom: 16px;
+}
+.weg-title {
+  font-family: var(--weg-font-display);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--weg-ink);
+  margin: 0 0 16px;
+  max-width: 620px;
+}
+.weg-title span {
+  color: var(--weg-blue);
+}
+.weg-lead {
+  margin: 0;
+  color: var(--weg-text);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* ---------- Selo ---------- */
+.weg-seal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.weg-seal__img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+}
+.weg-seal__caption {
+  font-family: var(--weg-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8c97ab;
+}
+
+/* ---------- Strip numerada ---------- */
+.weg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.weg-item {
+  padding: 34px 26px 30px;
+  border-right: 1px solid var(--weg-line);
+  border-radius: 14px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.weg-item:last-child {
+  border-right: none;
+}
+.weg-item:hover {
+  background: var(--weg-hover);
+  transform: translateY(-4px);
+}
+.weg-item__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.weg-item__num {
+  font-family: var(--weg-font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--weg-num);
+  transition: color 0.25s ease;
+}
+.weg-item:hover .weg-item__num {
+  color: var(--weg-blue);
+}
+.weg-item__icon {
+  font-size: 22px;
+  color: var(--weg-blue);
+  transition: transform 0.25s ease;
+}
+.weg-item:hover .weg-item__icon {
+  transform: scale(1.08);
+}
+.weg-item__title {
+  font-family: var(--weg-font-display);
+  font-weight: 600;
+  font-size: 16.5px;
+  color: var(--weg-ink);
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+.weg-item__desc {
+  margin: 0;
+  color: var(--weg-text-soft);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+/* ---------- Faixa de destaque ---------- */
+.weg-highlight {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--weg-blue-soft);
+  border: 1px solid var(--weg-blue-soft-border);
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+.weg-highlight svg {
+  font-size: 20px;
+  color: var(--weg-blue);
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+.weg-highlight p {
+  margin: 0;
+  color: #33405a;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.weg-highlight strong {
+  color: var(--weg-ink);
+  font-weight: 600;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .weg-card {
+    padding: 0 28px;
+  }
+  .weg-head {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+  .weg-title {
+    font-size: 32px;
+    max-width: 100%;
+  }
+  .weg-lead {
+    max-width: 100%;
+  }
+  .weg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .weg-item {
+    border-right: none;
+    border-bottom: 1px solid var(--weg-line);
+    text-align: center;
+  }
+  .weg-item__top {
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+}
+@media (max-width: 560px) {
+  .weg-grid {
+    grid-template-columns: 1fr;
+  }
+}

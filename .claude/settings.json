@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f vite)",
+      "Bash(awk '{print $9, \"\\(\"$5\" bytes\\)\"}')"
+    ]
+  }
+}
