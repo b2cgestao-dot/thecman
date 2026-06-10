@@ -9,7 +9,7 @@ export function Logo({ className }: LogoProps) {
     <img
       src="/LogoBranca%20(1).png"
       alt="Thecman"
-      className={cn('h-10 w-auto', className)}
+      className={cn('h-9 w-auto', className)}
       draggable={false}
     />
   )

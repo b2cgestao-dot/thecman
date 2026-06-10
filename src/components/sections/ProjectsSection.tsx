@@ -19,7 +19,7 @@ export function ProjectsSection() {
   const link = buildWhatsappLink(company.whatsapp, whatsappMessages.specialist)
 
   return (
-    <section id="projetos" className="section-padding bg-white">
+    <section id="projetos" className="section-padding bg-[#F5F7FA]">
       <Container>
         <SectionHeading
           eyebrow="Projetos e atendimentos"

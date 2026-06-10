@@ -95,7 +95,7 @@ export function TrustStrip() {
                         aria-hidden="true"
                       />
                     </span>
-                    <span className="text-center text-xs font-semibold leading-tight text-navy-900 sm:text-left sm:text-sm">
+                    <span className="text-center text-xs font-bold leading-tight text-navy-900 sm:text-left sm:text-[13px]">
                       {item.label}
                     </span>
                   </div>

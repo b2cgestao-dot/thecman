@@ -72,7 +72,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                className="flex items-center gap-1.5 rounded-md px-3 py-2 text-[14px] font-semibold tracking-[-0.01em] text-white transition-colors hover:bg-white/10"
               >
                 <FontAwesomeIcon
                   icon={faChevronDown}
@@ -120,7 +120,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium text-white transition-colors hover:bg-white/10"
+                    className="flex items-center gap-2 rounded-md px-3 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
                   >
                     <FontAwesomeIcon
                       icon={faChevronDown}

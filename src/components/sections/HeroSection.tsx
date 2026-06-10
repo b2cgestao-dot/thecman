@@ -53,7 +53,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.25rem]"
+              className="text-balance text-4xl font-extrabold leading-[1.0] tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem]"
             >
               Assistência Técnica e Revenda Autorizada{' '}
               <span className="text-brand-blue-light">WEG</span> em Salvador
@@ -63,7 +63,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-6 text-lg leading-relaxed text-white/85 sm:max-w-xl"
+              className="mt-6 text-[1.0625rem] font-light leading-[1.62] text-white/88 sm:max-w-xl"
             >
               {hero.subheadline}
             </motion.p>
@@ -81,7 +81,7 @@ export function HeroSection() {
                 whileHover={{ scale: 1.07 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: 'spring', stiffness: 380, damping: 18 }}
-                className="relative inline-flex cursor-pointer items-center gap-2.5 overflow-hidden rounded-lg bg-brand-blue px-7 py-3.5 text-base font-semibold text-white shadow-[0_4px_16px_rgba(37,99,235,0.4)] hover:shadow-[0_8px_28px_rgba(37,99,235,0.55)]"
+                className="relative inline-flex cursor-pointer items-center gap-2.5 overflow-hidden rounded-lg bg-brand-blue px-7 py-3.5 text-[15px] font-semibold tracking-[-0.01em] text-white shadow-[0_4px_16px_rgba(37,99,235,0.4)] hover:shadow-[0_8px_28px_rgba(37,99,235,0.55)]"
               >
                 <motion.span
                   aria-hidden="true"

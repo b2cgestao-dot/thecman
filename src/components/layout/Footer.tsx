@@ -46,7 +46,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Marca + descrição */}
           <div className="lg:col-span-5">
-            <Logo />
+            <Logo className="h-8" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-300">
               {company.tagline}
             </p>
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Links rápidos */}
           <nav className="lg:col-span-3" aria-label="Links rápidos">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+            <h3 className="text-[12px] font-bold uppercase tracking-[0.09em] text-white">
               Links rápidos
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -89,7 +89,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="group flex items-center gap-2 text-sm text-navy-300 transition-colors hover:text-white"
+                    className="group flex items-center gap-2 text-sm font-medium text-navy-300 transition-colors hover:text-white"
                   >
                     <span className="h-px w-3 bg-brand-blue opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
                     {link.label}
@@ -101,7 +101,7 @@ export function Footer() {
 
           {/* Contatos */}
           <div className="lg:col-span-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+            <h3 className="text-[12px] font-bold uppercase tracking-[0.09em] text-white">
               Contato
             </h3>
             <ul className="mt-4 space-y-3.5 text-sm">

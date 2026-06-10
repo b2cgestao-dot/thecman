@@ -31,7 +31,7 @@ const items = [
 
 export function WegAuthoritySection() {
   return (
-    <section id="revenda-weg" className="weg-authority section-padding">
+    <section id="revenda-weg" className="weg-authority section-padding bg-[#F5F7FA]">
       <div className="weg-card">
 
         {/* Cabeçalho: texto + selo */}

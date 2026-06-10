@@ -60,13 +60,11 @@ export default {
       },
       fontFamily: {
         sans: [
-          'Inter',
-          'Poppins',
-          'ui-sans-serif',
+          'Manrope',
           'system-ui',
           '-apple-system',
+          'BlinkMacSystemFont',
           'Segoe UI',
-          'Roboto',
           'sans-serif',
         ],
       },
