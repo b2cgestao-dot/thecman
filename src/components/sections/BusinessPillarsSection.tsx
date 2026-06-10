@@ -23,7 +23,7 @@ const iconVariants = {
 
 export function BusinessPillarsSection() {
   return (
-    <section id="solucoes" className="section-padding bg-surface-muted">
+    <section id="solucoes" className="section-padding bg-white">
       <Container>
         <SectionHeading
           eyebrow="O que fazemos"
