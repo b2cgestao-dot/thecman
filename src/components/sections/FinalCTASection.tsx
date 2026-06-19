@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCommentDots,
-  faBoxOpen,
-  faFileLines,
   faShieldHalved,
   faClock,
   faAward,
@@ -12,8 +10,6 @@ import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
 import { finalCta, company } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
-
-const secondaryIcons = [faBoxOpen, faFileLines]
 
 const trustBadges = [
   { icon: faShieldHalved, label: 'Autorizada WEG' },
@@ -69,30 +65,6 @@ export function FinalCTASection() {
                 {finalCta.buttons[0]?.label}
               </Button>
             </div>
-
-            {finalCta.buttons.length > 1 && (
-              <div className="mt-4 flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row">
-                {finalCta.buttons.slice(1).map((btn, i) => {
-                  const icon = secondaryIcons[i] ?? faCommentDots
-                  const link = buildWhatsappLink(company.whatsapp, btn.message)
-                  return (
-                    <Button
-                      key={btn.label}
-                      as="a"
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="outline"
-                      size="md"
-                      className="w-full sm:w-auto"
-                    >
-                      <FontAwesomeIcon icon={icon} className="h-4 w-4" aria-hidden="true" />
-                      {btn.label}
-                    </Button>
-                  )
-                })}
-              </div>
-            )}
 
             <p className="mt-8 text-sm text-navy-200">
               Atendimento técnico especializado em {company.city}/{company.state} e região.

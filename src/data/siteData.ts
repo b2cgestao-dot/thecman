@@ -22,12 +22,10 @@ import {
 /* -------------------------------------------------------------------------- */
 /*  IMAGENS REAIS                                                               */
 /* -------------------------------------------------------------------------- */
-import imgEquipe from '@/assets/images/equipe-thecman.jpg'
 import imgProjetoMotor from '@/assets/images/projeto-motor-01.jpg'
 import imgProjetoBobinador from '@/assets/images/projeto-bobinador.jpg'
-import imgRedutor from '@/assets/images/redutor.jpg'
-import imgAlternador from '@/assets/images/alternador.jpg'
-import imgPecasOriginais from '@/assets/images/projeto-equipamento-02.jpg'
+import imgRedutor from '@/assets/images/redutor.png'
+import imgAlternador from '@/assets/images/alternador.png'
 
 /* -------------------------------------------------------------------------- */
 /*  EMPRESA / CONTATOS                                                          */
@@ -105,8 +103,7 @@ export const hero = {
     'Loja própria com estoque',
     'Atendimento técnico especializado',
   ],
-  image: imgEquipe,
-  imageAlt: 'Técnico da Thecman realizando manutenção em um motor elétrico WEG',
+
 } as const
 
 /* -------------------------------------------------------------------------- */
@@ -157,7 +154,6 @@ export const store = {
     { icon: faUsers,        text: '+874 clientes ativos' },
   ] as { icon: IconDefinition; text: string }[],
   ctaLabel: 'Consultar peças WEG no WhatsApp',
-  image: imgPecasOriginais,
   imageAlt: 'Peças e equipamentos originais WEG disponíveis na Thecman',
 }
 
