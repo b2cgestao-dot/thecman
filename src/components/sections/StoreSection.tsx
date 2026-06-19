@@ -54,7 +54,7 @@ export function StoreSection() {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="whatsapp"
+                  variant="primary"
                   size="lg"
                 >
                   <FontAwesomeIcon icon={faCommentDots} className="h-5 w-5" aria-hidden="true" />
@@ -72,7 +72,7 @@ export function StoreSection() {
                 alt={store.imageAlt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/3] w-full object-cover lg:aspect-[4/5]"
+                className="h-[280px] w-full object-cover object-center sm:h-[360px] lg:aspect-[4/5] lg:h-auto"
               />
             </div>
           </Reveal>

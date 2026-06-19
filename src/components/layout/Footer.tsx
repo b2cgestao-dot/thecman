@@ -3,7 +3,6 @@ import {
   faLocationDot,
   faPhone,
   faEnvelope,
-  faCommentDots,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faInstagram,
@@ -16,9 +15,8 @@ import {
   company,
   navLinks,
   socialLinks,
-  whatsappMessages,
 } from '@/data/siteData'
-import { buildWhatsappLink, scrollToAnchor } from '@/lib/utils'
+import { scrollToAnchor } from '@/lib/utils'
 
 const socials = [
   { key: 'instagram', icon: faInstagram, label: 'Instagram', url: socialLinks.instagram },
@@ -27,10 +25,6 @@ const socials = [
 ] as const
 
 export function Footer() {
-  const whatsappLink = buildWhatsappLink(
-    company.whatsapp,
-    whatsappMessages.default,
-  )
   const activeSocials = socials.filter((s) => s.url)
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
@@ -125,17 +119,6 @@ export function Footer() {
                   className="text-navy-300 transition-colors hover:text-white"
                 >
                   {company.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <FontAwesomeIcon icon={faCommentDots} className="h-5 w-5 shrink-0 text-[#25D366]" aria-hidden="true" />
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-navy-300 transition-colors hover:text-white"
-                >
-                  WhatsApp — falar agora
                 </a>
               </li>
             </ul>

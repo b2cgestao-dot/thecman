@@ -51,7 +51,7 @@ export const company = {
   foundedYearsLabel: '+38 anos',
   city: 'Salvador',
   state: 'BA',
-  phone: '(71) 3000-0000',
+  phone: '(71) 98133-7243',
   whatsapp: '5571981337243',
   email: 'contato@thecman.com.br',
   address: 'Salvador - Bahia',
@@ -96,7 +96,6 @@ export const navLinks: NavLink[] = [
   { label: 'Serviços', href: '#servicos' },
   { label: 'Revenda WEG', href: '#revenda-weg' },
   { label: 'Projetos', href: '#projetos' },
-  { label: 'Reconhecimentos', href: '#reconhecimentos' },
   { label: 'Contato', href: '#contato' },
 ]
 
