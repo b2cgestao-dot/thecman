@@ -1,11 +1,12 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 type Variant = 'primary' | 'secondary' | 'whatsapp' | 'outline' | 'ghost'
 type Size = 'sm' | 'md' | 'lg'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none'
+  'relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none'
 
 const variants: Record<Variant, string> = {
   primary:
@@ -24,6 +25,24 @@ const sizes: Record<Size, string> = {
   sm: 'px-4 py-2 text-sm',
   md: 'px-5 py-2.5 text-sm sm:text-base',
   lg: 'px-7 py-3.5 text-base',
+}
+
+const springTransition = { type: 'spring', stiffness: 380, damping: 18 } as const
+
+function Shimmer() {
+  return (
+    <motion.span
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+      animate={{ x: ['-180%', '220%'] }}
+      transition={{
+        repeat: Infinity,
+        duration: 2.2,
+        ease: 'easeInOut',
+        repeatDelay: 1.8,
+      }}
+    />
+  )
 }
 
 interface CommonProps {
@@ -56,17 +75,31 @@ export function Button(props: ButtonProps) {
     const { as: _as, ...anchorRest } = rest as ButtonAsAnchor
     void _as
     return (
-      <a className={classes} {...anchorRest}>
+      <motion.a
+        className={classes}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.96 }}
+        transition={springTransition}
+        {...(anchorRest as object)}
+      >
+        <Shimmer />
         {children}
-      </a>
+      </motion.a>
     )
   }
 
   const { as: _as, ...buttonRest } = rest as ButtonAsButton
   void _as
   return (
-    <button className={classes} {...buttonRest}>
+    <motion.button
+      className={classes}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.96 }}
+      transition={springTransition}
+      {...(buttonRest as object)}
+    >
+      <Shimmer />
       {children}
-    </button>
+    </motion.button>
   )
 }
