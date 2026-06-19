@@ -9,21 +9,14 @@ import {
   faWrench,
   faGear,
   faBolt,
-  faShieldHalved,
-  faHeartPulse,
-  faGauge,
   faIndustry,
-  faClock,
   faUsers,
   faStore,
-  faHardHat,
   faHandshake,
   faGears,
   faBoxesStacked,
-  faAward,
   faCertificate,
   faHeadset,
-  faMicrochip,
 } from '@fortawesome/free-solid-svg-icons'
 
 /* -------------------------------------------------------------------------- */
@@ -35,7 +28,6 @@ import imgProjetoBobinador from '@/assets/images/projeto-bobinador.jpg'
 import imgRedutor from '@/assets/images/redutor.jpg'
 import imgAlternador from '@/assets/images/alternador.jpg'
 import imgPecasOriginais from '@/assets/images/projeto-equipamento-02.jpg'
-import imgSeloWeg from '@/assets/images/selo-weg-qualidade.jpg'
 
 /* -------------------------------------------------------------------------- */
 /*  EMPRESA / CONTATOS                                                          */
@@ -149,72 +141,6 @@ export const businessPillars: BusinessPillar[] = [
 ]
 
 /* -------------------------------------------------------------------------- */
-/*  AUTORIDADE WEG                                                              */
-/* -------------------------------------------------------------------------- */
-
-export const wegAuthority = {
-  title: 'A segurança de contar com uma autorizada WEG',
-  description:
-    'A Thecman é assistência técnica e revenda autorizada WEG, oferecendo suporte técnico, manutenção e fornecimento de soluções para empresas que precisam de confiança, agilidade e padrão técnico reconhecido.',
-  seal: imgSeloWeg,
-  sealAlt: 'Selo WEG Qualidade - autorização técnica reconhecida',
-  blocks: [
-    { icon: faCertificate, title: 'Autorizada WEG Motores' },
-    { icon: faGear,        title: 'Autorizada WEG Redutores / Cestari' },
-    { icon: faBolt,        title: 'Autorizada WEG Máquinas / Energia' },
-    { icon: faStore,       title: 'Revenda autorizada com loja própria' },
-  ] as { icon: IconDefinition; title: string }[],
-}
-
-/* -------------------------------------------------------------------------- */
-/*  SERVIÇOS                                                                    */
-/* -------------------------------------------------------------------------- */
-
-export interface ServiceItem {
-  icon: IconDefinition
-  title: string
-  description: string
-}
-
-export const services: ServiceItem[] = [
-  {
-    icon: faGears,
-    title: 'Manutenção de Motores Elétricos',
-    description: 'Motores CA, CC, motores especiais e máquinas elétricas.',
-  },
-  {
-    icon: faGear,
-    title: 'Manutenção de Motorredutores',
-    description:
-      'Diagnóstico, manutenção e suporte técnico para redutores e motorredutores.',
-  },
-  {
-    icon: faBolt,
-    title: 'Manutenção de Alternadores',
-    description:
-      'Atendimento especializado para alternadores de geradores e sistemas eletromecânicos.',
-  },
-  {
-    icon: faWrench,
-    title: 'Manutenção Preventiva e Corretiva',
-    description:
-      'Atuação para corrigir falhas, reduzir paradas e manter a operação funcionando.',
-  },
-  {
-    icon: faHeartPulse,
-    title: 'Manutenção Preditiva',
-    description:
-      'Tecnologia e acompanhamento para antecipar falhas e aumentar a confiabilidade dos equipamentos.',
-  },
-  {
-    icon: faMicrochip,
-    title: 'Quadros e suporte eletromecânico',
-    description:
-      'Atendimento técnico dentro do escopo da operação da Thecman.',
-  },
-]
-
-/* -------------------------------------------------------------------------- */
 /*  LOJA / REVENDA WEG                                                          */
 /* -------------------------------------------------------------------------- */
 
@@ -234,24 +160,6 @@ export const store = {
   image: imgPecasOriginais,
   imageAlt: 'Peças e equipamentos originais WEG disponíveis na Thecman',
 }
-
-/* -------------------------------------------------------------------------- */
-/*  PÚBLICO ATENDIDO                                                            */
-/* -------------------------------------------------------------------------- */
-
-export interface AudienceItem {
-  icon: IconDefinition
-  title: string
-}
-
-export const audience: AudienceItem[] = [
-  { icon: faIndustry,  title: 'Indústrias' },
-  { icon: faClock,     title: 'Empresas com operação contínua' },
-  { icon: faUsers,     title: 'Compradores técnicos' },
-  { icon: faWrench,    title: 'Setores de manutenção' },
-  { icon: faHandshake, title: 'Oficinas e empresas parceiras' },
-  { icon: faGear,      title: 'Geradores, motores, redutores e equipamentos eletromecânicos' },
-]
 
 /* -------------------------------------------------------------------------- */
 /*  PROJETOS / ATENDIMENTOS                                                     */
@@ -306,25 +214,6 @@ export const projects: ProjectItem[] = [
 ]
 
 /* -------------------------------------------------------------------------- */
-/*  MÉTRICAS / NÚMEROS                                                          */
-/* -------------------------------------------------------------------------- */
-
-export interface MetricItem {
-  icon: IconDefinition
-  value: string
-  label: string
-}
-
-export const metrics: MetricItem[] = [
-  { icon: faClock,     value: '+38',          label: 'anos de experiência' },
-  { icon: faGauge,     value: '+34.560',       label: 'projetos realizados' },
-  { icon: faUsers,     value: '+874',          label: 'clientes satisfeitos' },
-  { icon: faAward,     value: 'Autorizada WEG', label: 'em Salvador' },
-  { icon: faStore,     value: 'Loja própria',  label: 'com estoque' },
-  { icon: faHardHat,   value: 'Equipe técnica', label: 'especializada' },
-]
-
-/* -------------------------------------------------------------------------- */
 /*  EQUIPE / ESPECIALISTAS                                                      */
 /* -------------------------------------------------------------------------- */
 
@@ -359,96 +248,6 @@ export const team = {
     },
   ] as { icon: IconDefinition; title: string; description: string }[],
 }
-
-/* -------------------------------------------------------------------------- */
-/*  POR QUE ESCOLHER                                                            */
-/* -------------------------------------------------------------------------- */
-
-export interface DifferentialItem {
-  icon: IconDefinition
-  title: string
-  description: string
-}
-
-export const differentials: DifferentialItem[] = [
-  {
-    icon: faShieldHalved,
-    title: 'Autorizada WEG',
-    description:
-      'Padrão técnico, confiança e acesso a soluções reconhecidas no mercado.',
-  },
-  {
-    icon: faHeadset,
-    title: 'Atendimento especializado',
-    description:
-      'Equipe preparada para entender a necessidade da sua operação.',
-  },
-  {
-    icon: faBoxesStacked,
-    title: 'Estoque próprio',
-    description: 'Mais agilidade para peças e soluções disponíveis.',
-  },
-  {
-    icon: faClock,
-    title: 'Experiência industrial',
-    description: 'Mais de 38 anos atendendo empresas e operações técnicas.',
-  },
-  {
-    icon: faHandshake,
-    title: 'Manutenção e revenda em um só lugar',
-    description:
-      'Apoio tanto para quem precisa de serviço quanto para quem precisa comprar peças e equipamentos.',
-  },
-]
-
-/* -------------------------------------------------------------------------- */
-/*  CONTEÚDOS TÉCNICOS                                                          */
-/* -------------------------------------------------------------------------- */
-
-export interface ContentItem {
-  title: string
-  description: string
-  href: string
-  tag: string
-}
-
-export const contents: ContentItem[] = [
-  {
-    title: 'Quando fazer manutenção preventiva em motores elétricos?',
-    description:
-      'Sinais e periodicidade para planejar a manutenção e evitar paradas inesperadas.',
-    href: '#',
-    tag: 'Manutenção',
-  },
-  {
-    title: 'Como reduzir paradas inesperadas na indústria?',
-    description:
-      'Práticas de manutenção preditiva e planejamento para aumentar a disponibilidade.',
-    href: '#',
-    tag: 'Confiabilidade',
-  },
-  {
-    title: 'Quando reparar ou substituir um motor?',
-    description:
-      'Critérios técnicos e econômicos para decidir entre reparo e substituição.',
-    href: '#',
-    tag: 'Motores',
-  },
-  {
-    title: 'Como comprar peças WEG com mais segurança?',
-    description:
-      'A importância de uma revenda autorizada na escolha de peças e equipamentos.',
-    href: '#',
-    tag: 'Revenda',
-  },
-  {
-    title: 'O que observar em alternadores de geradores?',
-    description:
-      'Pontos de atenção e diagnóstico para manter alternadores confiáveis em operação.',
-    href: '#',
-    tag: 'Alternadores',
-  },
-]
 
 /* -------------------------------------------------------------------------- */
 /*  CTA FINAL                                                                   */
