@@ -30,7 +30,7 @@ const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Peças WEG originais' } },
     ],
   },
-  sameAs: [] as string[],
+  sameAs: ['https://share.google/W2sOHOm6bmEDmaXHW'],
 }
 
 export function Seo() {
@@ -49,13 +49,11 @@ export function Seo() {
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:locale" content="pt_BR" />
-      <meta property="og:image" content={seo.ogImage} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.ogImage} />
 
       {/* Schema.org LocalBusiness */}
       <script type="application/ld+json">

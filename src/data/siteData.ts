@@ -24,8 +24,8 @@ import {
 /* -------------------------------------------------------------------------- */
 import imgProjetoMotor from '@/assets/images/projeto-motor-01.jpg'
 import imgProjetoBobinador from '@/assets/images/projeto-bobinador.jpg'
-import imgRedutor from '@/assets/images/redutor.png'
-import imgAlternador from '@/assets/images/alternador.png'
+import imgRedutor from '@/assets/images/redutor.webp'
+import imgAlternador from '@/assets/images/alternador.webp'
 
 /* -------------------------------------------------------------------------- */
 /*  EMPRESA / CONTATOS                                                          */
@@ -269,6 +269,5 @@ export const seo = {
     'Thecman | Assistência Técnica e Revenda Autorizada WEG em Salvador',
   description:
     'Manutenção industrial, motores elétricos, redutores, alternadores, peças e soluções WEG com atendimento técnico especializado em Salvador e Bahia.',
-  ogImage: '/og-image.svg',
   url: company.website,
 }
