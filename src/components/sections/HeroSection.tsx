@@ -4,6 +4,7 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Container } from '@/components/ui/Container'
 import { hero, company, whatsappMessages } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
+import { trackContact } from '@/lib/pixel'
 
 export function HeroSection() {
   const specialistLink = buildWhatsappLink(
@@ -79,6 +80,7 @@ export function HeroSection() {
                 href={specialistLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackContact}
                 whileHover={{ scale: 1.07 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: 'spring', stiffness: 380, damping: 18 }}

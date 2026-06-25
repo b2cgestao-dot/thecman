@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { company, whatsappMessages } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
+import { trackContact } from '@/lib/pixel'
 
 /** Ícone oficial do WhatsApp (SVG) para o botão flutuante. */
 function WhatsappIcon({ className }: { className?: string }) {
@@ -20,6 +21,7 @@ export function FloatingWhatsapp() {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={trackContact}
       aria-label="Falar com a Thecman pelo WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}

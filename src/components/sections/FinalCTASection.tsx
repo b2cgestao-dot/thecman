@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
 import { finalCta, company } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
+import { trackContact } from '@/lib/pixel'
 
 const trustBadges = [
   { icon: faShieldHalved, label: 'Autorizada WEG' },
@@ -57,6 +58,7 @@ export function FinalCTASection() {
                 href={buildWhatsappLink(company.whatsapp, finalCta.buttons[0]?.message ?? '')}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackContact}
                 variant="primary"
                 size="lg"
                 className="mx-auto w-full max-w-xs justify-center text-base"

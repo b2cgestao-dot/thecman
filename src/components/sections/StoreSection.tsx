@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
 import { store, company, whatsappMessages } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
-
+import { trackContact } from '@/lib/pixel'
 
 export function StoreSection() {
   const link = buildWhatsappLink(company.whatsapp, whatsappMessages.parts)
@@ -54,6 +54,7 @@ export function StoreSection() {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={trackContact}
                   variant="primary"
                   size="lg"
                 >

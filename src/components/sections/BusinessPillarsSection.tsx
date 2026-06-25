@@ -6,6 +6,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 import { businessPillars, company } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
+import { trackContact } from '@/lib/pixel'
 
 const cardVariants = {
   hover: {
@@ -84,6 +85,7 @@ export function BusinessPillarsSection() {
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={trackContact}
                       variant="primary"
                       size="md"
                       className="w-full justify-center"
