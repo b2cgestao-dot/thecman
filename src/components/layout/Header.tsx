@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { Container } from '@/components/ui/Container'
@@ -42,7 +42,7 @@ export function Header() {
   }
 
   return (
-    <motion.header
+    <m.header
       animate={{
         backgroundColor: scrolled ? '#0D1B2E' : 'rgba(0,0,0,0)',
         boxShadow: scrolled
@@ -105,7 +105,7 @@ export function Header() {
       {/* Menu mobile */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
+          <m.div
             id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -132,9 +132,9 @@ export function Header() {
                 ))}
               </nav>
             </Container>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   )
 }

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { company, whatsappMessages } from '@/data/siteData'
 import { buildWhatsappLink } from '@/lib/utils'
 import { trackContact } from '@/lib/pixel'
@@ -17,7 +17,7 @@ export function FloatingWhatsapp() {
   const link = buildWhatsappLink(company.whatsapp, whatsappMessages.default)
 
   return (
-    <motion.a
+    <m.a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
@@ -38,6 +38,6 @@ export function FloatingWhatsapp() {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-70" />
         <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-white" />
       </span>
-    </motion.a>
+    </m.a>
   )
 }

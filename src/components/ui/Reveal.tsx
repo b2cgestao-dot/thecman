@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 interface RevealProps {
   children: ReactNode
@@ -13,7 +13,7 @@ interface RevealProps {
 /** Wrapper leve de animação de entrada (fade + subida) ao entrar na viewport. */
 export function Reveal({ children, delay = 0, className, y = 20 }: RevealProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -21,6 +21,6 @@ export function Reveal({ children, delay = 0, className, y = 20 }: RevealProps) 
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

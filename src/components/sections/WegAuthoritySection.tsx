@@ -50,9 +50,11 @@ export function WegAuthoritySection() {
 
           <div className="weg-seal" aria-label="Selo de Qualidade WEG">
             <img
-              src="/selo-weg.png"
+              src="/selo-weg.webp"
               alt="Selo WEG Qualidade"
               className="weg-seal__img"
+              width={280}
+              height={280}
               loading="lazy"
               decoding="async"
             />

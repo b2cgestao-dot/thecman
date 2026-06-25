@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 type Variant = 'primary' | 'secondary' | 'whatsapp' | 'outline' | 'ghost'
@@ -31,7 +31,7 @@ const springTransition = { type: 'spring', stiffness: 380, damping: 18 } as cons
 
 function Shimmer() {
   return (
-    <motion.span
+    <m.span
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent"
       animate={{ x: ['-180%', '220%'] }}
@@ -75,7 +75,7 @@ export function Button(props: ButtonProps) {
     const { as: _as, ...anchorRest } = rest as ButtonAsAnchor
     void _as
     return (
-      <motion.a
+      <m.a
         className={classes}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.96 }}
@@ -84,14 +84,14 @@ export function Button(props: ButtonProps) {
       >
         <Shimmer />
         {children}
-      </motion.a>
+      </m.a>
     )
   }
 
   const { as: _as, ...buttonRest } = rest as ButtonAsButton
   void _as
   return (
-    <motion.button
+    <m.button
       className={classes}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.96 }}
@@ -100,6 +100,6 @@ export function Button(props: ButtonProps) {
     >
       <Shimmer />
       {children}
-    </motion.button>
+    </m.button>
   )
 }

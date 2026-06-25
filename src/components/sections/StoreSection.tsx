@@ -69,8 +69,10 @@ export function StoreSection() {
           <Reveal delay={0.12}>
             <div className="relative overflow-hidden rounded-2xl border border-navy-100 shadow-card">
               <img
-                src="/Pe%C3%A7as-Weg.png"
+                src="/pecas-weg.webp"
                 alt={store.imageAlt}
+                width={800}
+                height={900}
                 loading="lazy"
                 decoding="async"
                 className="h-[280px] w-full object-cover object-center sm:h-[360px] lg:aspect-[4/5] lg:h-auto"

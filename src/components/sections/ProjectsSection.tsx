@@ -37,6 +37,8 @@ export function ProjectsSection() {
                     <img
                       src={project.image}
                       alt={`Atendimento técnico: ${project.category}`}
+                      width={600}
+                      height={450}
                       loading="lazy"
                       decoding="async"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

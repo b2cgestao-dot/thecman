@@ -33,9 +33,11 @@ export function ServicesSection() {
     >
       {/* ── Background: mobile ── */}
       <img
-        src="/Servi%C3%A7os-Mobile.png"
+        src="/servicos-mobile.webp"
         alt=""
         aria-hidden="true"
+        width={828}
+        height={1792}
         className="absolute inset-0 h-full w-full object-cover sm:hidden"
         style={{ objectPosition: 'center top' }}
         loading="eager"
@@ -44,9 +46,11 @@ export function ServicesSection() {
 
       {/* ── Background: desktop ── */}
       <img
-        src="/Servi%C3%A7os-Desktop.png"
+        src="/servicos-desktop.webp"
         alt=""
         aria-hidden="true"
+        width={1920}
+        height={1080}
         className="absolute inset-0 hidden h-full w-full object-cover sm:block"
         style={{ objectPosition: 'center right' }}
         loading="eager"

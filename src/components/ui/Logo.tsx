@@ -7,8 +7,10 @@ interface LogoProps {
 export function Logo({ className }: LogoProps) {
   return (
     <img
-      src="/LogoBranca%20(1).png"
+      src="/logo-branca.webp"
       alt="Thecman"
+      width={120}
+      height={36}
       className={cn('h-9 w-auto', className)}
       draggable={false}
     />

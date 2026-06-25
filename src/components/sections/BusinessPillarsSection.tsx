@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { Container } from '@/components/ui/Container'
@@ -39,7 +39,7 @@ export function BusinessPillarsSection() {
             const fromLeft = i === 0
 
             return (
-              <motion.article
+              <m.article
                 key={pillar.title}
                 initial={{ opacity: 0, x: fromLeft ? -80 : 80 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +58,7 @@ export function BusinessPillarsSection() {
                     {String(i + 1).padStart(2, '0')}
                   </span>
 
-                  <motion.span
+                  <m.span
                     variants={iconVariants}
                     className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-blue text-white shadow-lg"
                   >
@@ -67,7 +67,7 @@ export function BusinessPillarsSection() {
                       className="h-7 w-7"
                       aria-hidden="true"
                     />
-                  </motion.span>
+                  </m.span>
 
                   <h3 className="mt-5 text-center text-[1.0625rem] font-bold leading-[1.2] tracking-[-0.02em] text-white sm:text-left">
                     {pillar.title}
@@ -99,7 +99,7 @@ export function BusinessPillarsSection() {
                     </Button>
                   </div>
                 </div>
-              </motion.article>
+              </m.article>
             )
           })}
         </div>

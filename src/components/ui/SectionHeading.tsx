@@ -1,5 +1,5 @@
 import { Fragment, type ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface SectionHeadingProps {
@@ -53,7 +53,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
@@ -92,6 +92,6 @@ export function SectionHeading({
           {description}
         </p>
       )}
-    </motion.div>
+    </m.div>
   )
 }

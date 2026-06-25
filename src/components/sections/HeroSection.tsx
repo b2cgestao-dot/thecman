@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { Container } from '@/components/ui/Container'
@@ -19,9 +19,11 @@ export function HeroSection() {
     >
       {/* Fundo mobile — degradê escuro no topo, foto do técnico embaixo */}
       <img
-        src="/Mobile-Background.png"
+        src="/Mobile-Background.webp"
         alt=""
         aria-hidden="true"
+        width={828}
+        height={1792}
         loading="eager"
         fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover object-center sm:hidden"
@@ -29,9 +31,11 @@ export function HeroSection() {
 
       {/* Fundo desktop */}
       <img
-        src="/Hero-Background.png"
+        src="/Hero-Background.webp"
         alt=""
         aria-hidden="true"
+        width={1920}
+        height={1080}
         loading="eager"
         fetchPriority="high"
         className="absolute inset-0 hidden h-full w-full object-cover object-center sm:block"
@@ -50,7 +54,7 @@ export function HeroSection() {
             sm:py-10 sm:text-left sm:max-w-[62%]
             lg:py-14">
 
-            <motion.h1
+            <m.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -59,24 +63,24 @@ export function HeroSection() {
               Assistência Técnica e<br />
               Revenda Autorizada<br />
               <span className="text-brand-blue-light">WEG</span> em Salvador
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-6 text-[1.0625rem] font-light leading-[1.62] text-white/88 sm:max-w-xl"
             >
               {hero.subheadline}
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.18 }}
               className="mt-8 flex justify-center sm:justify-start"
             >
-              <motion.a
+              <m.a
                 href={specialistLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +90,7 @@ export function HeroSection() {
                 transition={{ type: 'spring', stiffness: 380, damping: 18 }}
                 className="relative inline-flex cursor-pointer items-center gap-2.5 overflow-hidden rounded-lg bg-brand-blue px-7 py-3.5 text-[15px] font-semibold tracking-[-0.01em] text-white shadow-[0_4px_16px_rgba(37,99,235,0.4)] hover:shadow-[0_8px_28px_rgba(37,99,235,0.55)]"
               >
-                <motion.span
+                <m.span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent"
                   animate={{ x: ['-180%', '220%'] }}
@@ -103,8 +107,8 @@ export function HeroSection() {
                   aria-hidden="true"
                 />
                 <span className="relative">Falar com um especialista</span>
-              </motion.a>
-            </motion.div>
+              </m.a>
+            </m.div>
 
           </div>
         </Container>
